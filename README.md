@@ -118,3 +118,37 @@ This project directly addresses the need for fundamental internal tools in small
 ![image](https://github.com/user-attachments/assets/155e1d90-e6a0-49a5-bf2b-f13412e4b8f2)
 
 -----
+
+## Project 4: To-Do App ✅
+
+### 💡 Description
+
+This project is a lightweight and functional **To-Do List application** designed to help users efficiently manage their daily tasks. It provides core functionalities for task organization, including adding new tasks, marking them as complete, editing existing tasks, and deleting them when done.
+
+### 🎯 Problem Solved
+
+Many existing productivity applications can be either overly complex ("bloated") or too simplistic. This To-Do App addresses the need for a balanced, functional task manager that empowers users to effectively organize their daily responsibilities without unnecessary features, promoting efficient task management.
+
+### ✨ Features
+
+  * **Task Management:** Allows users to **add**, **edit**, **delete**, and **mark tasks as complete**.
+  * **Data Persistence:** Tasks are saved locally using **`localStorage`**, ensuring data is retained even when the browser is closed, providing offline support.
+  * **Task Filtering:** Users can easily filter tasks to view **All**, **Completed**, or **Pending** items.
+  * **Responsive Design:** The application is designed to be fully responsive, ensuring a seamless user experience across various devices and screen sizes.
+  * **Clean UI:** Focuses on a minimalist and intuitive user interface for enhanced usability.
+  * **Offline Support:** Due to `localStorage` integration, the app functions reliably even without an active internet connection.
+
+### 💻 Technologies Used
+
+  * **HTML5**
+  * **CSS3**
+  * **JavaScript**
+  * **React**
+  * **`localStorage`** (for data persistence)
+
+### 📸 Screenshot
+
+![image](https://github.com/user-attachments/assets/f1fce914-f1e2-4ed9-a610-f4834081527c)
+
+
+-----
