@@ -1,16 +1,6 @@
 # Web-Projects
 
-Project 1: CodeNest - Your Web Development Partner
-Description
-CodeNest is a modern, responsive landing page designed for a fictional web development agency. It aims to showcase their services, portfolio, client testimonials, and pricing plans to potential clients, with a strong focus on clean UI and clear calls-to-action.
-
-Problem Solved
-This project addresses the common challenge faced by startups and businesses in establishing a compelling online presence. A well-designed landing page, like CodeNest, can significantly improve customer engagement and lead generation by clearly communicating value and guiding users towards action.
-You've provided the HTML for the "CodeNest" project and a problem statement along with project objectives and requirements. This is excellent!
-
-Here's the information for your first project, formatted for the README.md:
-
-Project 1: CodeNest - Your Web Development Partner
+#Project 1: CodeNest - Your Web Development Partner
 Description
 CodeNest is a modern, responsive landing page designed for a fictional web development agency. It aims to showcase their services, portfolio, client testimonials, and pricing plans to potential clients, with a strong focus on clean UI and clear calls-to-action.
 
