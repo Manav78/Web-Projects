@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Management Dashboard</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    /* Global styling with a focus on modern, clean aesthetics */
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --light-bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --border-color: #e0e6eb;
+      --text-color: #343a40;
+      --heading-color: #212529;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    /* Main dashboard title styling */
+    h2 {
+      font-weight: 700;
+      color: var(--heading-color);
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 .fas {
+      font-size: 1.8rem;
+      margin-right: 0.8rem;
+      color: var(--primary-color);
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -0.5rem;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 4px;
+      background-color: var(--primary-color);
+      border-radius: 2px;
+    }
+
+    /* Card-like containers for form and table sections */
+    .dashboard-card {
+      background-color: var(--card-bg);
+      border-radius: 0.85rem;
+      box-shadow: 0 6px 20px var(--shadow);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .dashboard-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Form input and button styling */
+    .form-control {
+      border-radius: 0.6rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid #ced4da;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .form-control::placeholder {
+        color: #929aab;
+        opacity: 1;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.2);
+      outline: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      padding: 0.8rem 1.8rem;
+      border-radius: 0.6rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn .fas {
+        margin-right: 0.5rem;
+    }
+
+    /* Search box specific styling */
+    #searchBox {
+        font-size: 1.05rem;
+    }
+
+    .input-group-text {
+        background-color: var(--light-bg);
+        border-color: #ced4da;
+        border-right: none;
+        border-radius: 0.6rem 0 0 0.6rem;
+        padding: 0.85rem 1rem;
+        color: var(--secondary-color);
+    }
+
+    /* Table styling for a professional data display */
+    .table-responsive {
+        border-radius: 0.85rem;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+    }
+
+    .table {
+      margin-bottom: 0;
+    }
+
+    .table thead th {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.2rem 1rem;
+      border: none;
+      font-weight: 600;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .table tbody tr {
+      background-color: var(--card-bg);
+      transition: background-color 0.2s ease;
+    }
+
+    .table tbody tr:hover {
+      background-color: #f0f7ff;
+    }
+
+    .table tbody tr:nth-child(even) {
+      background-color: #f8fbff;
+    }
+
+    .table tbody td {
+      padding: 1rem 1rem;
+      vertical-align: middle;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-color);
+    }
+
+    .table tbody tr:first-child td {
+        border-top: none;
+    }
+
+    /* Action buttons within the table */
+    .action-buttons .btn {
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.4rem;
+      font-size: 0.8rem;
+      margin: 0 0.2rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+    .btn-info:hover {
+        background-color: #138496;
+        border-color: #138496;
+        transform: translateY(-1px);
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #c82333;
+        transform: translateY(-1px);
+    }
+
+    /* Basic responsiveness for smaller screens */
+    @media (max-width: 768px) {
+        .col-md-4, .col-md-2 {
+            margin-bottom: 0.75rem;
+        }
+        .col-12 button {
+            width: 100%;
+        }
+        .dashboard-card {
+            padding: 1.5rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center">
+      <i class="fas fa-user-graduate"></i> Student Management Dashboard
+    </h2>
+
+    <div class="dashboard-card">
+      <h4 class="text-center mb-4 text-muted">Add or Update Student Details</h4>
+      <form id="studentForm" class="row g-3">
+        <div class="col-md-4">
+          <label for="name" class="form-label visually-hidden">Full Name</label>
+          <input type="text" class="form-control" placeholder="Full Name" id="name" required>
+        </div>
+        <div class="col-md-2">
+          <label for="reg" class="form-label visually-hidden">Registration No</label>
+          <input type="text" class="form-control" placeholder="Reg No" id="reg" required>
+        </div>
+        <div class="col-md-2">
+          <label for="dept" class="form-label visually-hidden">Department</label>
+          <input type="text" class="form-control" placeholder="Dept" id="dept" required>
+        </div>
+        <div class="col-md-2">
+          <label for="year" class="form-label visually-hidden">Year</label>
+          <input type="number" class="form-control" placeholder="Year" id="year" required min="1900" max="2100">
+        </div>
+        <div class="col-md-2">
+          <label for="marks" class="form-label visually-hidden">Marks</label>
+          <input type="number" class="form-control" placeholder="Marks" id="marks" required min="0" max="100">
+        </div>
+        <div class="col-12 text-center mt-4">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-plus-circle"></i> Add / Update Student
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="dashboard-card">
+      <h4 class="text-center mb-3 text-muted">Quick Search</h4>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fas fa-search"></i></span>
+        <input type="text" class="form-control" placeholder="Search by Name or Reg No..." id="searchBox">
+      </div>
+    </div>
+
+    <div class="dashboard-card p-0">
+      <div class="table-responsive">
+        <table class="table table-hover text-center" id="studentTable">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Reg No</th>
+              <th>Dept</th>
+              <th>Year</th>
+              <th>Marks</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
