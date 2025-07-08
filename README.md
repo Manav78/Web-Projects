@@ -1,6 +1,6 @@
 # Web-Projects
 
-#Project 1: CodeNest - Your Web Development Partner
+# Project 1: CodeNest - Your Web Development Partner
 Description
 CodeNest is a modern, responsive landing page designed for a fictional web development agency. It aims to showcase their services, portfolio, client testimonials, and pricing plans to potential clients, with a strong focus on clean UI and clear calls-to-action.
 
